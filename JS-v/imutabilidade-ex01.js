@@ -12,4 +12,15 @@ function getUserWithFullName(user) {
 
 const userWithFullName = getUserWithFullName(user);
 
-console.log(getUserWithFullName);
+console.log(userWithFullName);
+
+/*
+ele retorna um novo objeto
+{
+  name: 'Dayan',
+  lastName: 'Monteiro dos Santos',
+  fullName: 'Dayan Monteiro dos Santos'
+}
+
+
+*/ 
