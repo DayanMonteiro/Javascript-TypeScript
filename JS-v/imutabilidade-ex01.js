@@ -13,8 +13,10 @@ function getUserWithFullName(user) {
 const userWithFullName = getUserWithFullName(user);
 
 console.log(userWithFullName);
+console.log(user);
 
 /*
+console.log(userWithFullName);
 ele retorna um novo objeto
 {
   name: 'Dayan',
@@ -22,5 +24,8 @@ ele retorna um novo objeto
   fullName: 'Dayan Monteiro dos Santos'
 }
 
+////////////////////////////////////////
+console.log(user);
+{ name: 'Dayan', lastName: 'Monteiro dos Santos' }
 
 */ 
