@@ -1,7 +1,7 @@
 const pets = [ {
     name: 'Thor',
     type: 'dog' ,
-    age: 5,
+    age: 10,
 
 }, {
 
@@ -10,20 +10,31 @@ const pets = [ {
     age: 2,
 
 }, {
-    name: 'Bobão',
+    name: 'Blublu',
     type: 'fish' ,
     age: 1,
 
 }
 ]
-console.log(pets)
 
+const newPets = pets.filter((pet) => {
+    return pet.age < 5
+})
+
+console.log(pets)
+console.log(newPets)
 /*
 [
-  { name: 'Thor', type: 'cão', age: 5 },
-  { name: 'Opa', type: 'gato', age: 2 },
-  { name: 'Bobão', type: 'peixe', age: 1 }
+  { name: 'Thor', type: 'dog', age: 10 },
+  { name: 'Opa', type: 'cat', age: 2 },
+  { name: 'Blublu', type: 'fish', age: 1 }
+]
+[
+  { name: 'Opa', type: 'cat', age: 2 },
+  { name: 'Blublu', type: 'fish', age: 1 }
 ]
 
-
 */
+
+
+
