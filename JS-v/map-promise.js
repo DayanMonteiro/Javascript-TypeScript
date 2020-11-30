@@ -1,5 +1,4 @@
-
-
+// ex 01
 ;(async function() {
     const promiseFunction = async (element) => {
         return new Promise((resolve, reject) => {
@@ -11,7 +10,7 @@
     console.log(await itemMapped) // x - promise
 })()
 
-////
+// ex 02
 
 const items = ['a', 'b', 'c', 'd']
 
@@ -28,6 +27,10 @@ const items = ['a', 'b', 'c', 'd']
 
     console.log(itemsMapped)
 })()
+
 /*
 [ 'a - promise', 'b - promise', 'c - promise', 'd - promise' ]
 */
+
+
+
