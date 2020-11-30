@@ -3,7 +3,6 @@ const pets = [ {
     type: 'dog' ,
     age: 10,
     weigth: 18, 
-
 }, {
 
     name: 'Opa' ,
