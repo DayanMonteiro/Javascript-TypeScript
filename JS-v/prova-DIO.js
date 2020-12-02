@@ -1,3 +1,5 @@
+/*
+
 var numeros = [7, -5, 6, -3.4, 4.6, 12];
 
 var numerosPositivos = function(item) {
@@ -23,3 +25,19 @@ for (let i = 0; i < limit; i++) {
 }  
 
 //console.log(positivos);
+*/
+
+
+
+/////
+
+var cont =1;
+while (cont<=100) {
+    var resto = cont%2;
+    if (resto == 0) {
+        mostra("Par " + cont);
+    }
+    cont = cont + 1;
+}
+console.log(Par);
+   

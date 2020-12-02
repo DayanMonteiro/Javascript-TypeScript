@@ -66,6 +66,33 @@ console.log(alunos3);
 const removido = alunos3.pop();
 console.log(removido);
 console.log(alunos3);
+/*
+[ 'Thays', 'Paulo', 'Dayan', 'Laryssa', 'Pietra' ]
+*/
+
+// shift remove o primeiro indice então o indice 0 é removido e o elemento que era o indice 1 passa a ser o indice 0
+const convidados = ['Luiz', 'Laryssa', 'Dayan'];
+
+const removido1 = convidados.shift();
+console.log(removido1); // Luiz
+console.log(convidados); // [ 'Laryssa', 'Dayan' ]
+
+// push - incluindo novos convidados  
+const convidadosFesta2 = ['Gabriel', 'Laryssa', 'Dayan'];
+
+convidadosFesta2.push('Luiz');
+convidadosFesta2.push('Pietra');
+
+console.log(convidadosFesta2.slice(0, -1)); // o slice pegou desde o parametro 0 e removeu 1 parametro o ultimo que seria a Pietra, se eu passasse -2 removeria os 2 ultimos e assim por diante
+/*
+[ 'Gabriel', 'Laryssa', 'Dayan', 'Luiz' ]
+*/
+
+// instanceof verifica de forma boleana se é true ou false, por exemplo
+const convidadosFesta3 = ['Gabriel', 'Laryssa', 'Dayan'];
+
+console.log(typeof convidadosFesta3); // retorna object pq o array é um objeto
+console.log(convidadosFesta3 instanceof Array); // ao passar o instanceof ele retorna true confimando que é um array
 
 
 
