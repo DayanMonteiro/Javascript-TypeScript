@@ -34,3 +34,15 @@ ao incluir o 4 em c alterei tbm em d
 // porém se altero d tbm afeto c
 d.pop();
 console.log(c, d); // [ 1, 2, 3 ] [ 1, 2, 3 ]
+
+
+// ex 03
+
+let e = [5, 6, 7];
+let f = [...e];
+let g = f;
+
+console.log(e, f);
+
+e.push(4);
+console.log(e, f);
