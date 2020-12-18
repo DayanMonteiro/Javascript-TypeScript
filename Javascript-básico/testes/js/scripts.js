@@ -4,11 +4,6 @@ function meuEscopo () {
 
 
     const pessoas = [];
-/* poderia fazer assim para matar o endio do formulário
-    form.onsubmit = function (evento) {
-        evento.preventDefault();
-        alert(1);
-    }; */
 
 
     function recebeEventoForm (evento) {
@@ -19,7 +14,19 @@ function meuEscopo () {
         const peso = form.querySelector('.peso');
         const altura = form.querySelector('.altura');
 
-        console.log(nome.value, sobrenome, peso, altura);
+
+       pessoas.push ({
+           nome: nome.value,
+           sobrenome: sobrenome.value,
+           peso: peso.value,
+           altura: altura.value
+       }); // monta um objeto por indice do array
+
+       console.log(pessoas);
+
+       resultado.innerHTML += `<p>${nome.value} ${sobrenome.value} ` + `
+       ${peso.value} ${altura.value}
+       </p>`;
     }
 
     form.addEventListener('submit', recebeEventoForm);
