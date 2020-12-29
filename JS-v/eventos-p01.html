@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Javascript</title>
+</head>
+<body>
+
+    <h1>Projeto JS</h1>
+  
+    <button id="meu_botao">Clique</button>
+
+    <input id="meu_input" type="text" placeholder="E-mail"/>
+
+
+    <select>
+        <option value="1">Opção 1</option>
+        <option value="2">Opção 2</option>
+    </select>
+
+
+    <script type="text/javascript">
+
+    document.getElementById('meu_botao').addEventListener('click', () => {
+        clicou();
+    });
+
+    document.getElementById('meu_input').addEventListener('keyup', (event) => {
+        printarConsole(event);
+    })
+
+
+    document.getElementsByTagName('select')[0].addEventListener('change', (event) => {
+        printarConsole(event);
+    });
+
+    const clicou = () => {
+        alert('clicou');
+    };
+
+    const printarConsole = (evento) => {
+        console.log(evento.target.value);
+    };
+
+    </script>
+</body>
+
+
+</html>
