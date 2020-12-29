@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>Manipular a DOM Javascript</title>
+</head>
+<body>
+
+    <h1>Projeto JS</h1>
+  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <input type="text" id="trocar_imagem"
+                placeholder="url">
+            </div>
+            <div class="col-6">
+                <img 
+                id="imagem"
+                class="img-fluid"
+                src="https://variety.com/wp-content/uploads/2020/05/netflix-logo.png" alt="logo netflix">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+   const input_imagem = document.getElementById('trocar_imagem');
+   const imagem = document.getElementById('imagem')
+   input_imagem.addEventListener('keyup', () => {
+    imagem.src = input_imagem.value;
+   })
+
+
+    </script>
+</body>
+
+
+</html>
