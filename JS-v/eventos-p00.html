@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Javascript</title>
+</head>
+<body>
+    <h1>Projeto JS</h1>
+
+    <button onclick="clicou()">Clique</button>
+
+    <input onkeyup="printarConsole(event, this)" type="text" placeholder="E-mail"/> 
+
+    <select onchange="printarConsole(event, this)">
+    <option value="1">Opção 1</option>
+    <option value="2">Opção 2</option>
+    </select>
+
+    <script type="text/javascript">
+
+    const clicou = () => {
+        alert('clicou');
+    };
+
+    const printarConsole = (evento, elemento) => {
+        console.log(elemento);
+        console.log(evento.target.value);
+    };
+
+    </script>
+</body>
+
+
+</html>
