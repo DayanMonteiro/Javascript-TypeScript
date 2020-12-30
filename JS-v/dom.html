@@ -15,14 +15,26 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6">
+                <input type="color" id="input_color" />
+            <br />
                 <input type="text" id="trocar_imagem"
                 placeholder="url">
+            <br />
+            <select  id="input_filmes">
+                <option value="Filme 1" >Filme 1</option>
+                <option value="Filme 2" >Filme 2</option>
+                <option value="Filme 3" >Filme 3</option>
+
+
+            </select>
             </div>
             <div class="col-6">
                 <img 
                 id="imagem"
                 class="img-fluid"
-                src="https://variety.com/wp-content/uploads/2020/05/netflix-logo.png" alt="logo netflix">
+                src="https://variety.com/wp-content/uploads/2020/05/netflix-logo.png" alt="logo netflix" />
+
+                <h1 id="titulo_filme">Titulo 1</h1>
             </div>
         </div>
 
@@ -37,6 +49,20 @@
     imagem.src = input_imagem.value;
    })
 
+
+   const input_color = document.getElementById('input_color');
+   input_color.addEventListener('change', () => {
+    document.querySelector('body').style.backgroundColor = input_color.value;
+   });
+
+   const input_filmes = document.querySelector('#input_filmes');
+   input_filmes.addEventListener('change', (event) => {
+    // document.getElementById('titulo_filme').innerText = event.target.value;
+    document.getElementById(
+        'titulo_filme'
+    ).innerHTML =  `<text style="color: #f00;">${event.target.value}</text>`;
+
+   });
 
     </script>
 </body>

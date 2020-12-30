@@ -49,10 +49,11 @@ Lembrando que para o OR se um delas for verdadeira
 ele retorna verdadeiro (true)*/
 
 console.log(0 || false || null || 'Dayan Monteiro' ||  true);
-/* retorna o primeiro valor verdadeiro que ele encontra no caso 
+/* 
+retorna o primeiro valor verdadeiro que ele encontra no caso 
 retornou Dayan Monteiro, mesmo que após o nome tivesse outra opção verdadeira
-ele retorna a primeira opção */
-
+ele retorna a primeira opção 
+*/
 
 /* se o usuário selecionar uma cor, será a cor que ele optou
 se não escolher será utilizada a cor padrão*/
@@ -80,6 +81,8 @@ const e = NaN;
 console.log(a || b || c || d || e);
 /* retorna letra false letra c pois é uma string então ele
 irá retornar o primeiro valor verdeiro */
+
+
 
 
 
