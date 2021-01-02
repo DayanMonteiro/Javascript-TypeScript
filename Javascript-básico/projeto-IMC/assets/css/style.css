@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-    --primery-color: #74b9ff; 
+    --primery-color: #74b9ff;
     --primery-color-dark: #dfe6e9;
 }
 
@@ -59,4 +59,15 @@ form button {
 form button:hover {
     background: var(--primery-color-dark);
     color: #2d3436;
+}
+
+.paragrafo-resultado, .bad {
+    background: #74b9ff;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.bad {
+    background: #d63031 ;
 }
