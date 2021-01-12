@@ -86,23 +86,37 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-    switch() {
+    var hexa;
+    switch(color) {
         case 'red':
-            return 'O hexadecimal para a cor ' + color + ' é #e74c3c .';
+            hexa ='#e74c3c';
+            break;
         case 'blue':
-            return 'O hexadecimal para a cor ' + color + ' é #3498db .';
+            hexa ='#3498db';
+            break;
         case 'green':
-            return 'O hexadecimal para a cor ' + color + ' é #2ecc71 .';
+            hexa ='#2ecc71';
+            break;
         case 'black':
-            return 'O hexadecimal para a cor ' + color + ' é #1e272e .';
+            hexa ='#1e272e';
+            break;
         case 'white':
-            return 'O hexadecimal para a cor ' + color + ' é #ffffff .';
+            hexa ='#ffffff';
+            break;
         default:
             return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
+    return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-console.log()
+console.log(convertToHex('red')); // O hexadecimal para a cor red é #e74c3c.
+console.log(convertToHex('blue')); // O hexadecimal para a cor blue é #3498db.
+console.log(convertToHex('green')); // O hexadecimal para a cor green é #2ecc71.
+console.log(convertToHex('black')); // O hexadecimal para a cor black é #1e272e.
+console.log(convertToHex('white')); // O hexadecimal para a cor white é #ffffff.
+console.log(convertToHex('purple')); // Não temos o equivalente hexadecimal para purple.
+console.log(convertToHex('cyan')); // Não temos o equivalente hexadecimal para cyan.
+console.log(convertToHex('magenta')); // Não temos o equivalente hexadecimal para magenta.
