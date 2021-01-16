@@ -62,13 +62,17 @@ o retorno de `calculator`.
 por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
-// ?
+function calculator (num1, num2) { // cria calculator que pode receber 2 parametros
+    return function(callback){ // cria um retorno no qual contem um função de callback no qual a variavel sum a recebe
+        return callback(num1, num2); // esses 2 numeros são os numeros criados na função do calculator passados pela variavel sum
+    };
+}
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
 passando dois números por parâmetro.
 */
-// ?
+var sum = calculator(10, 2); // invoca calculator e passa os 2 parametros criados na function calculator
 
 /*
 Sabemos que `sum` agora tem uma função atribuída a ela, que é o retorno de
@@ -80,14 +84,19 @@ uma função anônima que irá retornar a soma dos dois números que essa funç�
 anônima tem como seus argumentos.
 */
 console.log( 'O resultado da soma é:' );
-// ?
+console.log(sum(function(number1, number2) { // retorno do callback que contem 2 argumentos
+    return number1 + number2;
+}));
 
 /*
 Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
 `division` e `mod`, e atribua à elas `calculator`, passando números
 diferentes para cada chamada.
 */
-// ?
+var subtraction = calculator(5, 2);
+var multiplication = calculator(3, 3);
+var division = calculator(100, 12);
+var mod = calculator(50, 32);
 
 /*
 Mostre as variáveis acima no `console` (uma chamada de console por variável),
@@ -97,16 +106,41 @@ As suas respostas devem estar abaixo dos `console.log` referentes à cada
 chamada.
 */
 console.log( 'O resultado da subtração é:' );
-// ?
+console.log(subtraction(function(number1, number2){
+    return number1 - number2;
+}));
 
 console.log( 'O resultado da multiplicação é:' );
-// ?
+console.log(multiplication(function(number1, number2) {
+    return number1 * number2;
+}));
 
 console.log( 'O resultado da divisão é:' );
-// ?
+console.log(division(function(number1, number2) {
+    return number1 / number2;
+}));
 
 console.log( 'O resto da divisão é:' );
-// ?
-
+console.log(mod(function(number1, number2){
+    return number1 % number2;
+}));
 
 })();
+
+/* Todas as respostas ficaram:
+Na função `myFunction`, o primeiro número é 10
+Na função `myFunction`, o segundo número é 20
+A soma de 10 e 20 é igual a 30
+A soma de 40 e 50 é igual a 90
+Na função myFunction3, number1 é igual a 40
+O resultado da soma é:
+12
+O resultado da subtração é:
+3
+O resultado da multiplicação é:
+9
+O resultado da divisão é:
+8.333333333333334
+O resto da divisão é:
+18
+*/
