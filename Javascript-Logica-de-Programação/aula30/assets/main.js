@@ -106,7 +106,22 @@ const opcoes = {
 
 h1.innerHTML =  data.toLocaleDateString('pt-BR', opcoes); */
 
-// modelo 3
+/* modelo 3
 const h1 = document.querySelector('.container h1');
 const data = new Date();
-h1.innerHTML = data.toLocaleDateString('pt-BR', { dateStyle: 'full', timeStyle: 'short' });
+h1.innerHTML = data.toLocaleDateString('pt-BR', { dateStyle: 'full', timeStyle: 'short' });*/
+
+// modelo 4
+let date = new Date();
+let dateString =  date.toLocaleDateString('pt-br', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+}
+).replace(/\//g, '-')
+
+let p = document.querySelector('.data')
+
+p.innerText = dateString
