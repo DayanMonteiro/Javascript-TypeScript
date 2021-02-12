@@ -36,3 +36,22 @@ console.log(obj3 === obj4); // false
 for(var prop in obj3) {
     console.log(prop) // i j retornou as propriedades do obj3 que são o i e o j
 }
+
+
+// ex 4  hasOwnProperty() - verifica propriedades específicas do objeto, não propriedades herdadas
+var obj5 = {a: 1, b: 2};
+console.log(obj5.hasOwnProperty('a')); // true
+console.log(obj5.hasOwnProperty('x')); //false
+
+/* o obj4 herdou as propriedades do obj3
+logo, o mesmo não tem as propriedades por ele mesmo e sim por herança, vejamos:*/
+console.log(obj4.hasOwnProperty('i')); // false
+/* veja apesar de ele nos exemplos acima ter o valor de i o valor é herdade então ao perguntar se o obj4 tem a propriedade i ele retorna falso*/
+
+
+// ex 05
+for( var prop in obj2) {
+    if(obj2.hasOwnProperty(prop)){
+        console.log(prop); // x
+    }
+}
