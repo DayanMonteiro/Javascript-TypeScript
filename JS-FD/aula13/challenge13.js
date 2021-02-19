@@ -107,37 +107,64 @@ console.log(brasil);
 /*
 Crie um novo array chamado `nordeste`, que tenha os estados do nordeste.
 */
-// ?
+var nordeste = ['Alagoas', 'Bahia', 'Ceará', 'Maranhão', 'Paraíba', 'Pernambuco', 'Piauí', 'Rio Grande do Norte', 'Sergipe'];
 
 /*
 Mostre no console os estados do nordeste.
 */
 console.log( '\nEstados do Nordeste:' );
-// ?
+console.log(nordeste);
+/*
+[
+  'Alagoas',
+  'Bahia',
+  'Ceará',
+  'Maranhão',
+  'Paraíba',
+  'Pernambuco',
+  'Piauí',
+  'Rio Grande do Norte',
+  'Sergipe'
+]
+*/
 
 /*
 Remova de `brasil` os estados do `sudeste`, colocando-os em uma variável
 chamada `newSudeste`.
 */
-// ?
+var newSudeste = brasil.slice(5);
 
 /*
 Adicione os estados do `nordeste` ao array `brasil`. Esses estados devem
 ficar no mesmo nível que os estados já existentes, não em um array separado.
 */
-// ?
+brasil = brasil.concat(nordeste);
 
 /*
 Mostre no console os estados em `newSudeste`.
 */
 console.log( '\nEstados em newSudeste:' );
-// ?
+console.log(newSudeste);
+/* [ 'Espirito Santo', 'Minas Gerais', 'Rio de Janeiro', 'São Paulo' ]*/
 
 /*
 Mostre no console os estados do `brasil`.
 */
 console.log( '\nAlguns estados do Brasil:' );
-// ?
+console.log(brasil);
+/*
+[
+  'Amapá',               'Amazonas',
+  'Paraná',              'Santa Catarina',
+  'Rio Grande do Sul',   'Espirito Santo',
+  'Minas Gerais',        'Rio de Janeiro',
+  'São Paulo',           'Alagoas',
+  'Bahia',               'Ceará',
+  'Maranhão',            'Paraíba',
+  'Pernambuco',          'Piauí',
+  'Rio Grande do Norte', 'Sergipe'
+]
+*/
 
 /*
 usando forEach, percorra o array `brasil` e gere um novo array chamado
@@ -146,14 +173,43 @@ propriedades:
 - `id`: que será o índice do array `brasil`,
 - `estado`: que será o estado do array `brasil`.
 */
-// ?
+var newBrasil = [];
+brasil.forEach(function(item, index) {
+  newBrasil.push({
+    id: index,
+    estado: item
+  });
+});
 
 /*
 Mostre o array `newBrasil` no console
 */
 console.log( '\nnewBrasil:' );
-// ?
+console.log(newBrasil);
+/*
 
+newBrasil:
+[
+  { id: 0, estado: 'Amapá' },
+  { id: 1, estado: 'Amazonas' },
+  { id: 2, estado: 'Paraná' },
+  { id: 3, estado: 'Santa Catarina' },
+  { id: 4, estado: 'Rio Grande do Sul' },
+  { id: 5, estado: 'Espirito Santo' },
+  { id: 6, estado: 'Minas Gerais' },
+  { id: 7, estado: 'Rio de Janeiro' },
+  { id: 8, estado: 'São Paulo' },
+  { id: 9, estado: 'Alagoas' },
+  { id: 10, estado: 'Bahia' },
+  { id: 11, estado: 'Ceará' },
+  { id: 12, estado: 'Maranhão' },
+  { id: 13, estado: 'Paraíba' },
+  { id: 14, estado: 'Pernambuco' },
+  { id: 15, estado: 'Piauí' },
+  { id: 16, estado: 'Rio Grande do Norte' },
+  { id: 17, estado: 'Sergipe' }
+]
+*/
 /*
 Percorra o array `brasil` e verifique se os estados tem mais de 7 letras cada,
 atribuindo o resultado à uma variável. Se tiver, mostre no console a frase:
