@@ -218,7 +218,12 @@ Senão, mostre no console:
 - "Nem todos os estados tem mais de 7 letras!"
 */
 console.log( '\nTodos os estados de `brasil` tem mais de 7 letras?' );
-// ?
+// every sempre retorna true ou false e no retorno passou as frases em ternario representando cada opção
+var every = brasil.every(function(item) {
+  return item.length > 7;
+});
+console.log(every ? 'Sim, todos os estados tem mais de 7 letras!' : 'Nem todos os estados tem mais de 7 letras!'); 
+// Nem todos os estados tem mais de 7 letras!
 
 /*
 Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -229,21 +234,51 @@ Senão, mostrar a frase:
 - "Ceará não foi incluído :("
 */
 console.log( '\nCeará está incluído em `brasil`?' );
-// ?
-
+// some sempre retorna false a menos que pelo menos um dos itens seja true
+var some = brasil.some(function(item) {
+  return item === 'Ceará';
+});
+console.log(some ? 'Ceará está incluído!' : 'Ceará não foi incluído :('); // Ceará está incluído!
 /*
 Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
 objeto desse array, e adicione a frase abaixo na propriedade `estado`:
 - "[ESTADO] pertence ao Brasil."
 Atribua o novo array a uma variável chamada `map`.
 */
-// ?
+var map = newBrasil.map(function(item, index) {
+  item.id++;
+  item.estado += 'pertence ao Brasil';
+  return item;
+});
 
 /*
 Mostre no console o array criado acima:
 */
 console.log( '\nnewBrasil agora com mais informações:' );
-// ?
+console.log(map)
+/*
+newBrasil agora com mais informações:
+[
+  { id: 1, estado: 'Amapápertence ao Brasil' },
+  { id: 2, estado: 'Amazonaspertence ao Brasil' },
+  { id: 3, estado: 'Paranápertence ao Brasil' },
+  { id: 4, estado: 'Santa Catarinapertence ao Brasil' },
+  { id: 5, estado: 'Rio Grande do Sulpertence ao Brasil' },
+  { id: 6, estado: 'Espirito Santopertence ao Brasil' },
+  { id: 7, estado: 'Minas Geraispertence ao Brasil' },
+  { id: 8, estado: 'Rio de Janeiropertence ao Brasil' },
+  { id: 9, estado: 'São Paulopertence ao Brasil' },
+  { id: 10, estado: 'Alagoaspertence ao Brasil' },
+  { id: 11, estado: 'Bahiapertence ao Brasil' },
+  { id: 12, estado: 'Cearápertence ao Brasil' },
+  { id: 13, estado: 'Maranhãopertence ao Brasil' },
+  { id: 14, estado: 'Paraíbapertence ao Brasil' },
+  { id: 15, estado: 'Pernambucopertence ao Brasil' },
+  { id: 16, estado: 'Piauípertence ao Brasil' },
+  { id: 17, estado: 'Rio Grande do Nortepertence ao Brasil' },
+  { id: 18, estado: 'Sergipepertence ao Brasil' }
+]
+*/
 
 /*
 Filtre o array criado acima, retornando somente os estados que tiverem
