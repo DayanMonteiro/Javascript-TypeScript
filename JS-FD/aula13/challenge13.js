@@ -284,14 +284,27 @@ newBrasil agora com mais informações:
 Filtre o array criado acima, retornando somente os estados que tiverem
 ID par. Atribua o valor à uma variável chamada `filter`.
 */
-// ?
+var filter = map.filter(function(item, index) {
+  return item.id % 2 === 0;
+});
 
 /*
 Mostre o array filtrado acima no console.
 */
 console.log( '\nEstados com ID par:' );
-// ?
-
-
+console.log(filter);
+/*
+[
+  { id: 2, estado: 'Amazonaspertence ao Brasil' },
+  { id: 4, estado: 'Santa Catarinapertence ao Brasil' },
+  { id: 6, estado: 'Espirito Santopertence ao Brasil' },
+  { id: 8, estado: 'Rio de Janeiropertence ao Brasil' },
+  { id: 10, estado: 'Alagoaspertence ao Brasil' },
+  { id: 12, estado: 'Cearápertence ao Brasil' },
+  { id: 14, estado: 'Paraíbapertence ao Brasil' },
+  { id: 16, estado: 'Piauípertence ao Brasil' },
+  { id: 18, estado: 'Sergipepertence ao Brasil' }
+]
+*/
 
 })();
