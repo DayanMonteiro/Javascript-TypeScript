@@ -114,13 +114,30 @@ Crie uma variável chamada `inversedName`, que reduzirá o array em uma string
 e atribuirá o seu nome invertido (usando o array criado acima).
 */
 console.log( '\nInversed Name:' );
-// ?
+var inversedName = name.reduceRight(function(acumulado, atual) {
+    return acumulado + atual;
+});
+console.log(inversedName); // anyDa
 
 /*
 Mostre no console o array `numberObjects`.
 */
 console.log( '\nNumber objects' );
-// ?
+console.log(numberObjects);
+/*
+[
+  { number: 1 },
+  { number: 2 },
+  { number: 3 },
+  { number: 4 },
+  { number: 5 },
+  { number: 6 },
+  { number: 7 },
+  { number: 8 },
+  { number: 9 },
+  { number: 10 }
+]
+*/
 
 /*
 Verifique se existem em algum índice de numberObjects um objeto ìgual a
@@ -132,21 +149,43 @@ Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
 o que acontece ;)
 */
 console.log( '\nExiste um { number: 2 } em numberObjects?' );
-// ?
+if(numberObjects.indexOf({number: 2}) > -1 ) {
+    console.log('Existe um objeto { number: 2 } em numberObjects!');
+} else {
+    console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+    /*
+    Existe um { number: 2 } em numberObjects?
+Não existe um objeto { number: 2 } em numberObjects :(
+    */
+}
+// retorna que não existe porque ele entende que foram criados 2 novos objetos na memória com o nome number : 2
 
 /*
 Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
 será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
 */
 console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-// ?
+if(numberObjects.lastIndexOf({number: 2}, 2) > -1 ) {
+    console.log('Existe um objeto { number: 2 } em numberObjects!');
+} else {
+    console.log('Não existe um objeto { number: 2 } em numberObjects :(');
+    /*
+E buscando a partir do último índice, o { number: 2 } existe?
+Não existe um objeto { number: 2 } em numberObjects :(
+    */
+}
+
 
 /*
 Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
 formato de String.
 */
 console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-// ?
-
-
+if(Array.isArray(justMod2Or3)) {
+    console.log(justMod2Or3.toString());
+    /*
+    justMod2Or3 é um array? Se for, a representação dele em String é:
+2,3,4,6,8,9,10
+*/
+}
 } ());
