@@ -60,3 +60,22 @@ console.log(arrLastName.join('t')); // Monteiro
 // se eu quiser substituir todos os (a) do meu nome por (e) posso juntar 2 métodos
 console.log(name.split('a').join('e')); // Deyen
 
+// substring(start [, end]) - faz mais ou menos o mesmo que o slice
+console.log(lastName.substring(1, 5)); // onte - pegou do indicie 1 ate o indice 4, lembrande que n pega o ultimo indice do valor passado
+
+// se não passar o segundo parametro ele faz igual ao slice
+console.log(lastName.substring(3)); // teiro - pegou do terceiro indice ate o final
+
+// se invertermos os parametros passados, por ex: passar (6, 2) ele pega de tras pra frente
+console.log(lastName.substring(6, 2)); /*ntei - ele contou da seguinte forma 
+[7=m 6=o 5=n 4=t 3=e 2=i 1=r 0=o] - então o 6 seria o (o) ele n conta o ultimo, 
+pulou pro n que era o 5 e andou ate i que era o 2, assim tetornando do 5n - 4t - 3e - 2i */
+
+// toLowerCase() - deixa tudo em caixa baixa
+console.log(lastName.toLowerCase()); // monteiro - retirou o M (maiusculo) e colcocou m (minusculo)
+
+// toUpperCase() - deixa tudo em maiusculas
+console.log(lastName.toUpperCase()); // MONTEIRO
+
+// se eu quiser deixar apenas um dos indices maiusculos uso 2 métodos juntos
+console.log(name.charAt(2).toUpperCase()); // Y - lembrando que ele retira o indice e o converte
