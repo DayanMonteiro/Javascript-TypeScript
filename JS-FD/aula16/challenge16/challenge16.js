@@ -45,7 +45,30 @@ curso para fazer isso funcionar corretamente :)
 console.log para cada formato.
 */
 console.log( '\nNome convertido à partir de um slug:' );
-// ?
+var fullName = 'dayan-monteiro-dos-santos';
+var newFullName = ' ';
+/*para separar as palavras pode ser usado o método split, como passei o ('-') 
+sempre que metodo encontrar o '-' ele vai separar*/
+var newFullName = fullName.split('-').map(function(name) {
+  return name[0].toUpperCase() + name.slice(1);
+}).join(''); 
+/* [ 'dayan', 'monteiro', 'dos', 'santos' ] 
+Parte 1 - do ´código passei o split, ele monta o array separando as palavras sempre que 
+encontra o '-' passado nas strings, sempre que achar o '-' o split('-') criará uma separação
+das palavras... esse seria o resultado final, como passei o map vejamos agora o que ele vai realizar.
+Parte 2 -  como passei o map() ele passa por todos os itens do array sendo assim agora somando os dois métodos é possivel usar o map para deixar todas as primeiras letras maiusculas, quando é passado name[0] ele vai capiturar a primeira letra de cada palavra do array, se o código acasse aqui o retorno seria [ 'd', 'm', 'd', 's' ] 
+Parte 3 - e agora pra transformar em maiuscula uso toUpperCase(), como ele só esta até o momento retornando a primeira letra e agora em maiusculas vou concatenar com + name ficaria assim [ 'Ddayan', 'Mmonteiro', 'Ddos', 'Ssantos' ], porem agora ficam duas letras iniciais uma maiscula e uma minuscula, 
+Parte 4 - para resolver isso aplica-se o método slice(1) ou seja quero que pegue a partir do indice 1 ate o final da string, dessa forma o retorno fica [ 'Dayan', 'Monteiro', 'Dos', 'Santos' ]
+Parte 5 - agora preciso juntar todas as palavras do array, para isso aplica-se o método join() retornando assim DayanMonteiroDosSantos - 
+*/
+console.log(fullName);
+console.log(newFullName);
+/*
+Nome convertido à partir de um slug:
+dayan-monteiro-dos-santos
+DayanMonteiroDosSantos
+*/
+
 
 /*
 - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -57,21 +80,38 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 console.log( '\nMeus amigos:' );
-// ?
+var friends = ['Ruan', 'Daniel', 'Edelmo', 'Luiz', 'Antônio'];
+console.log(friends); // [ 'Ruan', 'Daniel', 'Edelmo', 'Luiz', 'Antônio' ]
+
+// para reduzir em uma unica string utiliza-se o reduce() separando por virgulas
+var phrase = friends.reduce(function(acumulado, atual, index ) {
+  // se for ultimo indice cola 'e' se n for coloca ',' 
+  var separator = friends.length - 1 === index ? ' e ' : ',';
+  return acumulado + separator + atual;
+  // para inserir ao final dos nomes " são meus amigos." da pra utilizar o concat()
+}).concat(' são meus amigos.');
+console.log(phrase); // Ruan,Daniel,Edelmo,Luiz e Antônio são meus amigos.
+
 
 /*
 Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
-// ?
+console.log('Roberto'.replace('to', 'ta')); // Roberta
 
 /*
 Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
-// ?
+console.log('Fernando'.slice('Fernando'.lastIndexOf('nando')));
+/*
+Parte de uma string:
+nando
+*/
+// outra forma de fazer é usando o substring
+console.log('Fernando'.substring(8, 3)); // nando
 
 /*
 Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -83,6 +123,13 @@ de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
 console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-// ?
+var myName = 'Dayan';
+var myNewName = [];
+for(var i = 0, len = myName.length; i < len; i++) {
+  // intercalei entre minuscula e maiscula
+  myNewName.push(i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+}
+// para juntar as letras passei o join('') passei o '' em branco para simplesmete juntar as letras
+console.log(myNewName.join('')); // dAyAn
 
 }());
