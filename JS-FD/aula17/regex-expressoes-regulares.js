@@ -1,3 +1,8 @@
+
+/* expressões regulares -são um tipo primitivo e servem basicamente para
+manipular strings: substituir texto, pegar parte do texto, ou qualquer outra
+coisa para manipular textos. a expressão regular fica entre duas barras / / 
+*/
 var regex = /m/;
 console.log(regex); // /m/
 
@@ -172,3 +177,17 @@ console.log(texto2.match(/[a-z]/g));
   ... 581 more items
 ]
 */
+
+// replace()
+
+var texto3 = "Emery é uma banda cristã, iniciada em 2001 de estilo post-hardcore, que surgiu em Rock Hill, na Carolina do Sul. Atualmente a banda está em Seattle, Washington.";
+console.log(texto3.replace(/e/, 'E'));/*só mudou o segundo E da palavra Emery
+
+EmEry é uma banda cristã, iniciada em 2001 de estilo post-hardcore, que surgiu em Rock Hill, na Carolina do Sul. Atualmente a banda está em Seattle, Washington.
+*/
+// agora se passamos o g global vai modificar todas as letras do texto
+console.log(texto3.replace(/a/g, 'A'));/*
+Emery é umA bAndA cristã, iniciAdA em 2001 de estilo post-hArdcore, que surgiu em Rock Hill, nA CArolinA do Sul. AtuAlmente A bAndA está em SeAttle, WAshington.*/
+
+
+
