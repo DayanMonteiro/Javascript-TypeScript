@@ -132,5 +132,62 @@ console.log(text4.match(/\d\d?/g));
 
 // + - representa uma ou mais ocorrências do item anteior
 //ex: letra s seguida ou nao de outra letra s
-console.log(text4.match(/s+/g)); // [ 's' ] ele capturou apenas o s dentro da palavra cadastro
+console.log(text4.match(/s+/g)); //s dentro da palavra cadastro
 
+// agora passando text2 que tem mais letras s veja que ele pega todos os s contidos no texto
+console.log(text2.match(/s+/g));
+/*
+[
+  's',  's', 's',  's', 's',  's',
+  's',  's', 's',  's', 'ss', 's',
+  'ss', 's', 's',  's', 's',  's',
+  's',  's', 's',  's', 's',  's',
+  's',  's', 'ss', 's', 's',  's'
+]
+*/
+
+
+// * - zero ou mais ocorrências do item anterior
+//ex: \w* captura qualquer palavra seguida de qualquer caractere
+console.log(text4.match(/\w*/g));
+/*
+[
+  'meu',         '',     'c',
+  '',            'digo', '',
+  'foi',         '',     'cadastrado',
+  '',            '27',   '',
+  'de',          '',     'fevereiro',
+  '',            'de',   '',
+  '2020',        '',     'e',
+  '',            'meu',  '',
+  'c',           '',     'digo',
+  '',            '',     '',
+  '12345678910', ''
+]
+*/
+
+
+//ex: como capturar
+var queryString = '?s=lala&b=bebe&c=cce';
+///[?&] - vai capturar a ? ou o &  / (\W+) seguido de um caractere alfanumérico + quantos otros tiverem / = seguido de um sinal de = / seguido de um caractere alfanumérico + quantos otros tiverem
+console.log(queryString.replace(/[?&](\w+)=(\w+)/g, function(regex, key, value){
+  console.log(key, value) 
+  /*
+  s lala
+b bebe
+c cce
+undefinedundefinedundefined
+*/
+}));
+
+// ex realizando busca
+console.log(queryString.replace(/[?&](\w+)=(\w+)/g, function(regex, key, value){
+  if(key === 's')
+  console.log('o resultado da busca para ' + value + ' é: ');
+  return;
+  /*
+  veja que o value capturou o lala que era o valor do s
+  o resultado da busca para lala é: 
+undefinedundefinedundefined 
+ */
+}));
