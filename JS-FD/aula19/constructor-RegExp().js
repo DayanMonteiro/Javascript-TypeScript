@@ -27,6 +27,7 @@ var strg2 = 'Olá oi desenvolvedores';
 var pattern5 = new RegExp('Olá (oi|tchau) desenvolvedores');
 console.log(
     '===',
+    // .test - é um teste da regex que testa se é verdeiro ou falso
     pattern5.test('Olá mundo'),
     pattern5.test('Olá oi desensolvedores'),
     pattern5.test('Olá tchau desenvolvedores'),
@@ -35,11 +36,58 @@ console.log(
 
 // ex 5 se passar ^ no inicio e no fim da frase eu travo as opções buscando se iniciam e terminam conforme passadas, vejamos:
 var strg3 = 'Olá oi desenvolvedores';
-var pattern6 = new RegExp('^Olá (oi|tchau) desenvolvedores^');
+var pattern6 = new RegExp('^Olá (oi|tchau) desenvolvedores$');
 console.log(
     '===',
+ 
     pattern6.test('Olá mundo'),
-    pattern6.test('Olá oi desensolvedores'),
+    pattern6.test('Olá oi desenvolvedores'),
     pattern6.test('Olá tchau desenvolvedores'),
     pattern6.test('Olá opa desenvolvedores')
-); // === false false false false 
+); // === false true true false
+
+
+// método .exec(string)
+           // \d - vai buscar por números
+(function(){
+    'use strict';
+
+var regex = /\d/g;
+var name = 'Da123yan';
+var result;
+
+console.log(regex); // /\d/
+console.log(name);// Da123yan
+
+// cada vez que eu passar o exec ele contará mais uma passagem
+console.log(regex.exec(name)); // [ '1', index: 2, input: 'Da123yan', groups: undefined ]
+console.log(regex.exec(name)); // [ '2', index: 3, input: 'Da123yan', groups: undefined ]
+console.log(regex.exec(name)); // [ '3', index: 4, input: 'Da123yan', groups: undefined ]
+
+
+
+
+}());
+
+
+// regex + while
+
+var regex1 = /\d/g;
+var name1 = 'Da12345yan';
+var result1;
+
+// enquanto result for diferente de null
+while( result1 = regex1.exec(name1) !== null) {
+    console.log(result1)
+};
+/*
+retorna true 5 vezes porque como o \d esta capturando numeros e ele capturou 5 numeros ele retornar true 5x
+
+true
+true
+true
+true
+true
+
+*/
+
