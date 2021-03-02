@@ -64,9 +64,6 @@ console.log(regex.exec(name)); // [ '1', index: 2, input: 'Da123yan', groups: un
 console.log(regex.exec(name)); // [ '2', index: 3, input: 'Da123yan', groups: undefined ]
 console.log(regex.exec(name)); // [ '3', index: 4, input: 'Da123yan', groups: undefined ]
 
-
-
-
 }());
 
 
