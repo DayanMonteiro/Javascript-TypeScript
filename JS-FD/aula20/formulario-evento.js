@@ -21,5 +21,5 @@
         $inputPassword.value = 'minhasenha';
     */
 
-    // addEventListener()
+    
 }(window, document));
