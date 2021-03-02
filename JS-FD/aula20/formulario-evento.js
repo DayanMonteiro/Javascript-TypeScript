@@ -2,15 +2,15 @@
     'use strict';
 
     
-    var $inputUsarName = doc.querySelector('#username');
+    var $inputUsername = doc.querySelector('#username');
     var $inputPassword = doc.querySelector('#password');
 
     
-    $inputUsarName.value = 'Dayan Monteiro';
+    $inputUsername.value = 'Dayan Monteiro';
     $inputPassword.value = 'minhasenha';
 
 
-    console.log($inputUsarName, $inputPassword);
+    console.log($inputUsername, $inputPassword);
    
     /* posso usar esses parametros como
     getter - obeter pegar o dado
