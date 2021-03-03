@@ -83,11 +83,19 @@ Se for confirmado, mostre um alerta com a mensagem:
 Caso contrário, mostre um alerta com a mensagem:
     - "Não enviado."
 */
-$button.addEventListener('click', function(){
+$button.addEventListener('click', function(event){
+    event.preventDefault();
     if(!$inputUsername.value)
         return alert('Preencha o nome do usuário!');
     if(!$inputEmail.value)
-    return alert('Preencha o e-mail!')
+        return alert('Preencha o e-mail!');
+    if(!message)
+        return alert('Preencha a mensagem!');
+    if(!isValidEmail($inputEmail.value))
+        return alert('Entre com e-mail válido!');
+    if(!confirm('Tem certeza que deseja enviar o formulário?'))
+        return alert('Não enviado.');
+    return alert('Enviado com sucesso!');
 }, false);
 
 /*
