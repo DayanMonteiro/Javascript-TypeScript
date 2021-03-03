@@ -89,10 +89,10 @@ $button.addEventListener('click', function(event){
         return alert('Preencha o nome do usuário!');
     if(!$inputEmail.value)
         return alert('Preencha o e-mail!');
-    if(!message)
-        return alert('Preencha a mensagem!');
     if(!isValidEmail($inputEmail.value))
         return alert('Entre com e-mail válido!');
+    if(!$message.value)
+        return alert('Preencha a mensagem!');
     if(!confirm('Tem certeza que deseja enviar o formulário?'))
         return alert('Não enviado.');
     return alert('Enviado com sucesso!');
@@ -122,7 +122,20 @@ Alguns e-mails inválidos:
     - "rita-marica@titica.a.b"
     - "agua_@evida.br.com"
 */
-// ?
+function isValidEmail(email) {
+    /*
+    /^(que terá um inicio)$(e um fim definidos)/ 
+    [\w(qualquer caractere)+.(também aceitando sinal de + e .)
+    ]+@(seguido de @)\w+(seguido de qualquer caractere)+(quantos forem necessários)
+    \.(seguido de um ponto, esse é pra tipo o .com .org etc)\w{2,}(seguido de qualquer 
+    caractere com no minimo 2, ou quantos outros forem necessários \w{2} (seguido de qualquer 
+    caractere alfanumérico, porém no máximo 2 caracteres ex .br) -- como esse final é opcional 
+    eu envolvo essa parte do código em (), ficando(?:\.\w{2})? -- 
+    o ?: faz o agrupamento dos elementos e não a captura e por fim passo $ dizendo que a regex 
+    deve acabar ali
+    */
+   return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email)
+}
 
 
 }(window, document));
