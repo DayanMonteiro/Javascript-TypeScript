@@ -44,4 +44,6 @@
 
     // passando um array de itens
     myFunction1.apply(objf, ['Dayan', 'toca', 'guitarra', 'diariamente']); // telecaster Dayan toca guitarra diariamente
+
+    
 }());
