@@ -51,7 +51,7 @@ function handleClickNumber() {
 }
 
 function handleClickOperation() {  
-    removeLastItemIfIsAnOperator();
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
     $visor.value += this.value;
 }
 
@@ -59,13 +59,13 @@ function handleClickCE() {
     $visor.value = 0;
 }
 
-function isLastItemOperation() {
+function isLastItemOperation(number) {
     /* verifica antes de adicionar o valor, ele precisa remover o ultimo item 
     se o mesmo já tiver sido uma das operações */
     var operations = ['+', '-', 'x', '÷'];
     /* capturar o ultimo item do value e verificar se ele é uma operação - split('') 
     quebra em um array - pop() vai pegar o ultimo item e colocar no lastItem */
-    var lastItem = $visor.value.split('').pop();
+    var lastItem = number.split('').pop();
     /* verificando se pe um operador, o some passa por todos os itens do array 
     e verifica se pelo menos um deles existe no retorno, se for retorna true, 
     se for ele retorna true e remove o ultimo item */
@@ -74,17 +74,18 @@ function isLastItemOperation() {
     });
 }
 
-function removeLastItemIfIsAnOperator() {
+function removeLastItemIfIsAnOperator(number) {
      // se o ultimo for uma dessas operações
-     if(isLastItemOperation()){
+     if(isLastItemOperation(number)){
         /* remova o ultimo item dessa operação, o slice vai pegar 
         desde o indice 0 e ao final remover -1 o ultimo item */
-        $visor.value = $visor.value.slice(0, -1);
+        return number.slice(0, -1);
         }
-}
+        return number;
+    }
 
 function handleClickEqual(){
-    removeLastItemIfIsAnOperator();
+    $visor.value = removeLastItemIfIsAnOperator($visor.value);
     /* fazer com que os valores se transformem em numeros e quais operações irão executar 
     match() para transformar em um array e a regex para verificar (/[\d+(se é um numero seguido de quantos forem necessários) - seguido de um dos operadores [+x÷-] e por fim ? para dizer que é opcional, se não ele não irá captirar o ultimo conjunto de números
     */
@@ -92,10 +93,28 @@ function handleClickEqual(){
     /*  O método reduce() executa uma função reducer (fornecida por você) 
     para cada elemento do array, resultando num único valor de retorno. 
     */
-    var result = allValues.reduce(function(accumulated, actual) {
-        return accumulated + actual;
+    $visor.value = allValues.reduce(function(accumulated, actual) {
+        // remover o ultimo item do valor acumulado
+        var firstValue = accumulated.slice(0, -1);
+        // obter somente o ultimo item do valor acumulado
+        var operator = accumulated.split('').pop();
+        // pegar o ultimo valor
+        var lastValue = removeLastItemIfIsAnOperator(actual);
+        // se o ultimo item for um operador, se for ele passa o lastOperator, se não for, passa como falso
+        var lastOperator = isLastItemOperation(actual) ? actual.split('').pop(): '';
+        // verificar o operador
+        switch(operator) {
+            //e verifica o operador passado e realiza as contas
+            case '+':
+                return Number(firstValue) + Number(lastValue) + lastOperator;
+            case '-':
+                return Number(firstValue) - Number(lastValue) + lastOperator;
+            case 'x':
+                return Number(firstValue) * Number(lastValue) + lastOperator;
+            case '÷':
+                return Number(firstValue) / Number(lastValue) + lastOperator;
+        }    
     });
-    console.log(result);
 }
 
 }(window, document));
