@@ -85,6 +85,17 @@ function removeLastItemIfIsAnOperator() {
 
 function handleClickEqual(){
     removeLastItemIfIsAnOperator();
+    /* fazer com que os valores se transformem em numeros e quais operações irão executar 
+    match() para transformar em um array e a regex para verificar (/[\d+(se é um numero seguido de quantos forem necessários) - seguido de um dos operadores [+x÷-] e por fim ? para dizer que é opcional, se não ele não irá captirar o ultimo conjunto de números
+    */
+    var allValues = $visor.value.match(/\d+[+x÷-]?/g);
+    /*  O método reduce() executa uma função reducer (fornecida por você) 
+    para cada elemento do array, resultando num único valor de retorno. 
+    */
+    var result = allValues.reduce(function(accumulated, actual) {
+        return accumulated + actual;
+    });
+    console.log(result);
 }
 
 }(window, document));
