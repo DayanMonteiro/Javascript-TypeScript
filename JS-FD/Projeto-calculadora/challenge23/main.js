@@ -29,6 +29,7 @@ var $visor = doc.querySelector('[data-js="visor"]');
 var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
 var $buttonsOperations = doc.querySelectorAll('[data-js="button-operation"]');
 var $buttonCE = doc.querySelector('[data-js="button-ce"]');
+var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
 
 
 // capturar os botões criando um array-like
@@ -39,7 +40,9 @@ Array.prototype.forEach.call($buttonsNumbers, function(button){
 Array.prototype.forEach.call($buttonsOperations, function(button) {
     button.addEventListener('click', handleClickOperation, false);
 });
+// eventos para os botões
 $buttonCE.addEventListener('click', handleClickCE, false );
+$buttonEqual.addEventListener('click', handleClickEqual, false);
 
 // especificando a função de cada botão
 function handleClickNumber() {
@@ -47,12 +50,41 @@ function handleClickNumber() {
     $visor.value += this.value;  
 }
 
-function handleClickOperation() {
+function handleClickOperation() {  
+    removeLastItemIfIsAnOperator();
     $visor.value += this.value;
 }
 
 function handleClickCE() {
     $visor.value = 0;
+}
+
+function isLastItemOperation() {
+    /* verifica antes de adicionar o valor, ele precisa remover o ultimo item 
+    se o mesmo já tiver sido uma das operações */
+    var operations = ['+', '-', 'x', '÷'];
+    /* capturar o ultimo item do value e verificar se ele é uma operação - split('') 
+    quebra em um array - pop() vai pegar o ultimo item e colocar no lastItem */
+    var lastItem = $visor.value.split('').pop();
+    /* verificando se pe um operador, o some passa por todos os itens do array 
+    e verifica se pelo menos um deles existe no retorno, se for retorna true, 
+    se for ele retorna true e remove o ultimo item */
+    return operations.some(function(operator){
+        return operator === lastItem;
+    });
+}
+
+function removeLastItemIfIsAnOperator() {
+     // se o ultimo for uma dessas operações
+     if(isLastItemOperation()){
+        /* remova o ultimo item dessa operação, o slice vai pegar 
+        desde o indice 0 e ao final remover -1 o ultimo item */
+        $visor.value = $visor.value.slice(0, -1);
+        }
+}
+
+function handleClickEqual(){
+    removeLastItemIfIsAnOperator();
 }
 
 }(window, document));
