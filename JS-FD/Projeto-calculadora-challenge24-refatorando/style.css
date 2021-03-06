@@ -1,0 +1,66 @@
+body {
+    flex:1;
+    justify-content: center;
+    align-items:  center;
+}
+
+input{
+    border: unset;
+    color: #fff;
+    font-size: 60px;
+    display: flex;
+    flex: 1;
+    background-color: unset;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 !important;
+}
+
+
+.matriz {
+    width: 380px;
+    height: 664px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+ .button {
+    font-size: 40px;
+    width: 95px;
+    height: 110px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #888;  
+}
+
+.operations {
+    color: #fff;
+    background-color: #fa8231;
+}
+
+.tripla {
+    width: 285px;
+}
+
+.display{
+    flex:1;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.displayValue {
+    font-size: 60px;
+    color: #fff;
+}

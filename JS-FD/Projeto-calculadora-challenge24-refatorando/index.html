@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <title>Challenge 24 - Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!--  
   <input type="text" value="0" readonly data-js="visor">
   <div class="buttons-numbers">
     <button data-js="button-number" value="0">0</button>
@@ -28,6 +30,33 @@
     <button data-js="button-ce" value="ce">CE</button>
   </div>
 
-  <script src="challenge24.js"></script>
+
+-->
+
+  <div class="matriz">
+    <div class="display">
+      <input type="text" value="0" readonly data-js="visor">
+    </div>
+    <div class="buttons">
+      <button class="button operations tripla"  data-js="button-ce" value="ce">CE</button>
+      <button class="button operations"  data-js="button-equal" value="=">=</button>
+      <button  class="button" data-js="button-number" value="7">7</button>
+      <button  class="button" data-js="button-number" value="8">8</button>
+      <button  class="button" data-js="button-number" value="9">9</button>
+      <button  class=" button operations"  data-js="button-operation" value="x">x</button>
+      <button  class="button" data-js="button-number" value="4">4</button>
+      <button  class="button" data-js="button-number" value="5">5</button>
+      <button  class="button" data-js="button-number" value="6">6</button>
+      <button class="button operations"  data-js="button-operation" value="÷">÷</button>
+      <button  class="button" data-js="button-number" value="1">1</button>
+      <button  class="button" data-js="button-number" value="2">2</button>
+      <button  class="button" data-js="button-number" value="3">3</button>
+      <button class=" button operations"  data-js="button-operation" value="+">+</button>
+      <button  class="button tripla" data-js="button-number" value="0">0</button>
+      <button class=" button operations"  data-js="button-operation" value="-">-</button>
+    </div>
+ </div>
+
 </body>
+<script src="challenge24.js"></script>
 </html>
