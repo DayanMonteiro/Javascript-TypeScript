@@ -4,5 +4,13 @@ Esse repositória abriga várias aulas de diferentes cursos de Javascript, de bl
 
 Um destaque a esse respositório é do curso do Fernando Daciuck o Javascript Ninja o qual atribuirei a essa descrição sua imagem ao concluir o curso.
 
+## Calculadora
+
+Um projeto interessante foi desenvolver uma calculadora usando Javascript puro.
+
+![calculadora](https://github.com/DayanMonteiro/Javascript-TypeScript/blob/main/calculadora.jpg)
+
+
+
 
 
