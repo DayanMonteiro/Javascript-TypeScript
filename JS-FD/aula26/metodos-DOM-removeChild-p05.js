@@ -6,7 +6,8 @@
     var $mainHeader = document.querySelector('.main-header');
     var $h1 = $mainHeader.firstElementChild;
     
-   // hasChildNodes - verifica se o elemento tem algum filho
+   // removeChild - remove o filho passado por parametro - removendo h1
+   $mainHeader.removeChild($h1);
    
-    console.log($h1.hasChildNodes()); // true 
+
 }());
