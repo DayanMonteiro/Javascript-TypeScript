@@ -21,7 +21,7 @@ ex: ajax.send(<data>);
     var ajax = new XMLHttpRequest();
     // abrindo a requisição com o método get e como ainda não tem pra onde enviar usando a / passamos pra raiz do próprio localhost
     console.log(ajax.readyState); // 0 - não encontrado
-    ajax.open('GET', '/');
+    ajax.open('GET', '../aula28/data/data.json');
     // submeter, por ainda não ter pra onde enviar passamos null ou deixamos em branco
     console.log(ajax.readyState); // 1 - conexão aberta
     ajax.send();
@@ -33,8 +33,13 @@ ex: ajax.send(<data>);
     };
 
     /* outra forma de passar o evento seria com o addEventListener */
-
+    console.log('Carregando...');
     ajax.addEventListener('readystatechange', function(){
+        if(isRequestOK()) {
+            var data = JSON.parse(ajax.responseText);
+            console.log('Requisição OK', data.message);
+            // ajax.responseText traz a resposta da requisição em string caso queira consultar
+        } 
          // ajax.readState - verifica o estado atual da requisição
         console.log('terminou requisição', ajax.readyState, ajax.status);
         /*
@@ -75,5 +80,8 @@ ex: ajax.send(<data>);
     lista completa de status
     https://www.w3schools.com/tags/ref_httpmessages.asp
     */
+   function isRequestOK() {
+       ajax.readyState === 4 && ajax.status === 200;
+   }
 
 }());
