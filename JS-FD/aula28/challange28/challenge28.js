@@ -128,15 +128,60 @@ O DESAFIO COMEÇA AQUI
     function handleSubmitFormCEP(event) {
       event.preventDefault();
       console.log($inputCEP.get()[0].value);
-      var url = 'https://viacep.com.br/ws/[CEP]/json'.replace('[CEP]', $inputCEP.get()[0].value);
+      var url = getUrl();
      ajax.open('GET', url);
      ajax.send();
      ajax.addEventListener('readystatechange', handleReadyStateChange);
     }
 
+    function getUrl() {
+      return 'https://viacep.com.br/ws/[CEP]/json'.replace('[CEP]', $inputCEP.get()[0].value.replace(/\D/g, ''));
+    }
+
     function handleReadyStateChange() {
-      if(ajax.readyState === 4 && ajax.status === 200);
-      console.log('Popular formulário', ajax.responseText);
+      if(isRequestOk()) 
+      fillCEPFields();
+    }
+
+    function isRequestOk() {
+      return ajax.readyState === 4 && ajax.status === 200;
+    }
+
+    function fillCEPFields() {
+      var data = parseData();
+      if(!data)
+        return console.log('DATA ERROR', data);
+      console.log('DATA', data);
+      var $logradouro = new DOM('[data-js="logradouro"]');
+      var $bairro = new DOM('[data-js="bairro"]');
+      var $estado = new DOM('[data-js="estado"]');
+      var $cidade = new DOM('[data-js="cidade"]');
+      var $cep = new DOM('[data-js="cep"]');
+     $logradouro.get()[0].textContent = data.logradouro;
+     $bairro.get()[0].textContent = data.bairro;
+     $estado.get()[0].textContent = data.uf;
+     $cidade.get()[0].textContent = data.localidade;
+     $cep.get()[0].textContent = data.cep;
+    }
+
+    function parseData() {
+      var result;
+      try {
+        result = JSON.parse(ajax.responseText);
+      }
+      catch(e) {
+        result = null;
+      }
+      return result;
+    }
+
+    function getMessage(type) {
+      var messages = {
+        loading: 'Buscando informações para o CEP [CEP]...',
+        ok: 'Endereço referente ao CEP [CEP]:',
+        error: 'Não encontramos o endereço para o CEP [CEP].'
+      };
+      return messages[type];
     }
 
     }());
