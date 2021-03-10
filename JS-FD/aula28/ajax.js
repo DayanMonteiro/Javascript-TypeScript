@@ -37,7 +37,7 @@ ex: ajax.send(<data>);
     ajax.addEventListener('readystatechange', function(){
         if(isRequestOK()) {
             var data = JSON.parse(ajax.responseText);
-            console.log('Requisição OK', data.message);
+            console.log('Requisição OK\n', data.message);
             // ajax.responseText traz a resposta da requisição em string caso queira consultar
         } 
          // ajax.readState - verifica o estado atual da requisição
@@ -81,7 +81,7 @@ ex: ajax.send(<data>);
     https://www.w3schools.com/tags/ref_httpmessages.asp
     */
    function isRequestOK() {
-       ajax.readyState === 4 && ajax.status === 200;
+      return ajax.readyState === 4 && ajax.status === 200;
    }
 
 }());
