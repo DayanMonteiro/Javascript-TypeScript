@@ -2,6 +2,11 @@ body {
     font-family: sans-serif;
 }
 
+img {
+    max-width: 200px;
+    height: auto;
+}
+
 header {
     text-align: center;
 }
