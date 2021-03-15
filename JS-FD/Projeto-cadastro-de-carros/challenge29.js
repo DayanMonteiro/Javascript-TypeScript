@@ -27,7 +27,7 @@
     E aqui nesse arquivo, faça a lógica para cadastrar os carros, em um módulo
     que será nomeado de "app".
     */
-(function(DOM) {
+(function($) {
   'use strict';
 
     function app() {
@@ -36,7 +36,18 @@
           console.log('app init');
           // método companyInfo
           this.companyInfo();
+          this.initEvents();
         },
+
+        initEvents: function initEvents() {
+          $('[data-js="form-register"]').on('submit', this.handleSubmit);
+        },
+
+        handleSubmit: function handleSubmit(e) {
+          e.preventDefault();
+          console.log('submit');
+        }
+
         // passando a função para o método
         companyInfo: function companyInfo() {
           // metodo ajax para trazer as informações
@@ -56,10 +67,10 @@
           }
 
             var data = JSON.parse(this.responseText);
-            var $companyName = new DOM('[data-js="company-name"]');
-            var $companyPhone = new DOM('[data-js="company-phone"]');
-            $companyName.get()[0].textContent = data.name;
-            $companyPhone.get()[0].textContent = data.phone;
+            var $companyName = $('[data-js="company-name"]').get();
+            var $companyPhone = $('[data-js="company-phone"]').get();
+            $companyName.textContent = data.name;
+            $companyPhone.textContent = data.phone;
           },
 
           isReady: function isReady() {
@@ -67,7 +78,6 @@
           }
       };     
     }
-
 
     app().init();
   
