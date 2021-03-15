@@ -5,6 +5,26 @@
         this.element = document.querySelectorAll(elements);
       }
       
+      // metodos estáticos
+      DOM.isNumber = function isNumber(parametro){
+        return Object.prototype.toString.call(parametro) === '[object Number]';
+      };
+      
+      DOM.isString = function isString(parametro){
+        return Object.prototype.toString.call(parametro) === '[object String]';
+      };
+      
+      DOM.isBoolean = function isBoolean(parametro){
+        return Object.prototype.toString.call(parametro) === '[object Boolean]';
+      };
+      
+      DOM.isNull = function isNull(parametro){
+        return Object.prototype.toString.call(parametro) === '[object Null]'
+        || Object.prototype.toString.call(parametro) === '[object Undefined]';
+      };
+
+      //fim dos metodos estáticos
+
       DOM.prototype.on = function on(eventType, callback) {
         Array.prototype.forEach.call(this.element, function(element){
           element.addEventListener(eventType, callback, false);
@@ -62,23 +82,6 @@
     };
   
     
-    DOM.prototype.isNumber = function isNumber(parametro){
-      return Object.prototype.toString.call(parametro) === '[object Number]';
-    };
-    
-    DOM.prototype.isString = function isString(parametro){
-      return Object.prototype.toString.call(parametro) === '[object String]';
-    };
-    
-    DOM.prototype.isBoolean = function isBoolean(parametro){
-      return Object.prototype.toString.call(parametro) === '[object Boolean]';
-    };
-    
-    DOM.prototype.isNull = function isNull(parametro){
-      return Object.prototype.toString.call(parametro) === '[object Null]'
-      || Object.prototype.toString.call(parametro) === '[object Undefined]';
-    };
-
 //para reconhecer a DOM
 win.DOM = DOM;
 }(window, document));
