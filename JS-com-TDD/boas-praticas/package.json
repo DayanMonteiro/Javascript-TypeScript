@@ -1,0 +1,22 @@
+{
+  "name": "boas-praticas",
+  "version": "1.0.0",
+  "description": "biblioteca do curso JS com TDD na prática",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DayanMonteiro/Javascript-TypeScript/tree/main/JS-com-TDD/boas-praticas"
+  },
+  "keywords": [
+    "js",
+    "tdd"
+  ],
+  "author": "Dayan Monteiro <dmsmamb@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.22.0"
+  }
+}
