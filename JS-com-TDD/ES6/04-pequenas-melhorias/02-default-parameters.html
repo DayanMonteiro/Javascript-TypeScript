@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>02 - Default Parameters</title>
+</head>
+<body>
+</body>
+
+<script>
+    //  Aqui foram passados os parametros de nome e sobrenome
+    function hello (name = 'Dayan', surname = 'Monteiro') {
+        console.log(`Hello ${name} ${surname}! How are you?`); //Hello Dayan Monteiro! How are you?
+    }
+
+    hello();
+    // aqui alterei os parametros alterando nome e sobrenome
+    hello('Laryssa', 'Viana'); //Hello Laryssa Viana! How are you?
+    // aqui como passei apenas o nome ele repete o sobrenome passado na função
+    hello('Pietra'); // Hello Pietra Monteiro! How are you?
+</script>
+</html>

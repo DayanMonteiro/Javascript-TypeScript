@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Shorthand Properties</title>
+</head>
+<body>
+</body>
+
+<script>
+    let firstName = 'Dayan';
+    let surname = 'Monteiro';
+    let age = 33;
+
+    const person = {
+        firstName,
+        surname,
+        age,
+
+        // o Shorthand elimina a necessidade de escrever function hello function()
+        hello() {
+            console.log('Hello!')
+        }
+    };
+
+    console.log(person);
+
+    person.hello();
+
+</script>
+</html>
