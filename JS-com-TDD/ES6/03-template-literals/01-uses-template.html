@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Uses Template Literals</title>
+</head>
+<body>
+</body>
+
+<script>
+    const ireland = {
+        live: 'Dublin',
+        love: 'Galway'
+    };
+    // sem template literals ` `
+    const text = 'Eu moro em ' + ireland.live + ' e sou apaixonado por ' + ireland.love+'!';
+    // com template literals ` `
+    const newText = `Eu moro em ${ireland.live} e sou apaixonado por ${ireland.love}!`;
+
+// sem template literals ` `
+const fruits = 'bannana' 
+                + `\n`
+                + 'orange'
+                + `\n`
+                + 'apple';
+// com template literals ` `
+const newFruits = 
+`bannana
+orange
+apple`;
+
+    console.log(newFruits);
+
+    // console.log(newText);
+</script>
+</html>
