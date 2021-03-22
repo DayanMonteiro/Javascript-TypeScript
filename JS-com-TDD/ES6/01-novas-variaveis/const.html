@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03 - const</title>
+</head>
+<body>
+</body>
+
+<script>
+    const secretNumber = 28;
+    
+    const pessoa = {
+        name: 'Dayan',
+        age: 50
+    };
+    // para a variavel ficar imutável basta congelar a variável
+    Object.freeze(pessoa);
+    
+    pessoa.age = 33;
+    
+    console.log(pessoa);
+</script>
+</html>

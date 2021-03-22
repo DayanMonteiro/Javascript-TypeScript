@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Intro Arrow Function</title>
+</head>
+<body>
+</body>
+
+<script>
+    const ireland = ['Dublin', 'Galway', 'Cork'];
+
+    // O método map() invoca a função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado.
+    const love = ireland.map(function(name) {
+        return `I love ${name}!`;
+    });
+
+    const loveArrow = ireland.map((name) => {
+        return `I love ${name}!`;
+    });
+
+    const loveArrowSingle = ireland.map(name => {
+        return `I love ${name}!`;
+    });
+
+    const loveArrowOneLine = ireland.map(name => `I love ${name}!`);
+
+    const loveChain = ireland
+                        //O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida
+                        .filter(name => name === 'Dublin')
+                        .map(name => `I love ${name}!`);
+
+    console.log(loveChain);
+</script>
+</html>
