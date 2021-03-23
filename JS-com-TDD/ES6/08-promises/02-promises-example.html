@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>02 - Promises Example</title>
+</head>
+<body>
+</body>
+
+<script>
+    /*A API Fetch fornece uma interface JavaScript para acessar e 
+    manipular partes do pipeline HTTP, tais como os pedidos e respostas. */
+    // fetch trabalha em cima do protocolo de promisses
+    var posts = fetch('https://willianjusten.com.br/search.json');
+
+    /* A Promisse tem 3 estamos importantes
+     pending - 
+    resolved - 
+    rejected - 
+    */
+
+    posts
+        .then(data => data.json())
+        .then(data => data.map(post => {
+            console.log(post.title);
+        }));
+        
+</script>
+</html>
