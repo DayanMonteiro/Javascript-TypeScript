@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>03 - Rest Params</title>
+</head>
+<body>
+</body>
+
+<script>
+
+// o args vai receber todos os parametros passados a baixo no console
+function multiply(mult, ...args) {
+    // o primeiro argumento multiplica os demais
+    return args.map(arg => arg * mult);
+}
+
+console.log(multiply(5, 1, 2, 3, 4, 5, 6)); /* [5, 10, 15, 20, 25, 30]
+ou seja:
+5 * 1 = 5
+5 * 2 = 10
+e assim por diante montando o array com os resultados
+*/
+
+</script>
+</html>

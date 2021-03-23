@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Spread Operator Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+    let front = ['react', 'vue', 'angular'];
+    let back = ['python', 'ruby', 'nodejs'];
+
+    // let fullStack = [];
+    // fullStack = fullStack.concat(front);
+    // fullStack.push('RxJS');
+    // fullStack = fullStack.concat(back);
+    // 
+
+    // o spread operator são os 3 pontos ele separa por caractere um elemento passando com as [] ele cria um array
+    console.log([...'Dayan']); // (5) ["D", "a", "y", "a", "n"]
+
+    // passando sem as [] ele retorna cada caractere separado string por string
+    console.log(...'Dayan'); // D a y a n
+
+    // desmembrar um array
+    console.log(...front); // react vue angular - retornou não como array, mas como um conjunto de strings
+
+
+    // juntando 2 arrays concatenando um novo elemento entre eles
+    let fullStack = [...front, 'RxJS', ...back];
+
+    console.log(fullStack); //  (7) ["react", "vue", "angular", "RxJS", "python", "ruby", "nodejs"]
+
+   
+</script>
+</html>
