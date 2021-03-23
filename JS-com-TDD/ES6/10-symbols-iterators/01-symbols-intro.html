@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Symbols Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+
+/*
+A função Symbol() retorna um valor do tipo símbolo (symbol), tem propriedades estáticas que expõem vários membros dos objetos nativos, possuem métodos estáticos que expõem o registro de símbolos globais e se parecem com uma classe de objeto nativo, mas estão incompletos como construtor porque não suportam a sintaxe "new Symbol()" .
+
+Cada valor símbolo retornado de Symbol() é único. Um símbolo pode ser usado como o identificador para propriedades de objetos; esse é o único propósito do tipo de dado.
+
+Um valor com o tipo de dados Symbol pode ser referido como um "valor de símbolo". Em um ambiente de tempo de execução JavaScript, um valor de símbolo é criado chamando a função Symbol, que produz dinamicamente um valor anônimo e exclusivo. Um símbolo pode ser usado como uma propriedade do objeto.
+
+O símbolo pode ter uma descrição opcional, mas apenas para fins de depuração.
+
+Um valor Symbol representa um identificador exclusivo
+
+
+*/
+
+
+    let foo = Symbol('name');
+    let bar = Symbol('name');
+
+    // console.log(foo == bar);
+    // 
+    
+    let obj = {
+        [Symbol('name')]: 'Dayan',
+        [Symbol('age')]: 33,
+        city: 'Barra Mansa'
+    };
+    
+    const symbols = Object.getOwnPropertySymbols(obj);
+
+    /* O método map() invoca a função callback passada por argumento para 
+    cada elemento do Array e devolve um novo Array como resultado.*/
+    const data = symbols.map(sym => obj[sym]);
+
+    console.log(data);
+
+</script>
+</html>
