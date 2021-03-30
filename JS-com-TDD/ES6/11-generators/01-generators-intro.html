@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Generators Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+    // para aplicar o generator é necessario o uso do * após a função
+    // o genNames é um generator 
+    function* genNames() {
+        console.log('Chamando primeiro nome!');
+        // yield - diferente do return que encerra ao encontrar o yield permite continuar sua busca chamado os outros um por um
+        yield 'Dayan';
+
+        console.log('Chamando segundo nome!');
+        yield 'Laryssa';
+
+        console.log('Chamando terceiro nome!');
+        yield 'Gabriel';
+    }
+
+    const names = genNames();
+
+    console.log(names.next());
+    console.log(names.next());
+    console.log(names.next());
+
+
+</script>
+</html>

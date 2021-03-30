@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>01 - Sets Intro</title>
+</head>
+<body>
+</body>
+
+<script>
+    // o Set guardo valores únicos
+    let mySet = new Set(['Dayan', 'Danilo', 'Daniel']);
+    // retorno mySet = Set(3) {"Dayan", "Danilo", "Daniel"}
+
+    
+    mySet.add('Julio');
+    mySet.add('Julio');
+    mySet.add('Julio');
+    mySet.add('Dayan');
+    /* retorna mySet =  Set(4) {"Dayan", "Danilo", "Daniel", "Julio"} 
+    por mais que repita Julio 3 vezes ele retorna apenas 1 e se passar meu nome de novo ele só me retorna 1 vez pq n retorna valores identicos
+    */
+
+    // se quiser deletar basta passar o delele + o nome do elemento
+    mySet.delete('Dayan');
+    /* retorna mySet = Set(3) {"Danilo", "Daniel", "Julio"} deletei o elemento com meu nome
+    */
+
+   //para consultar se um elemento existe usamos o has
+    console.log(mySet.has('Dayan')); // false - visto que meu nome foi removido
+    console.log(mySet.has('Danilo')); // true
+
+    console.log(mySet[1]); // gera undefined pq o mySet não é baseado em um array de elementos
+
+    // mySet é baseado em iterator
+    let it = mySet.values();
+    
+    console.log(it.next());
+
+    for (name of it) {
+        console.log(name);
+    }
+
+ // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set
+</script>
+</html>
