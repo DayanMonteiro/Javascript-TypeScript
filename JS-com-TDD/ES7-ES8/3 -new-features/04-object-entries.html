@@ -10,19 +10,19 @@
 
     <script>
         const animals = {
-            camel: 3,
-            llama: 2,
-            alpaca: 5,
+            dog: 3,
+            cat: 2,
+            horse: 5,
         };
 
         const animalsMap = new Map(Object.entries(animals));
 
-        console.log(Object.keys(animals));
+        console.log(Object.keys(animals)); // (3) ["dog", "cat", "horse"]
 
-        console.log(animalsMap.size);
-        console.log(animalsMap.has('llama'));
-        console.log(animalsMap.has('lion'));
-        console.log(animalsMap.get('alpaca'));
+        console.log(animalsMap.size); // 3
+        console.log(animalsMap.has('dog')); // true
+        console.log(animalsMap.has('lion')); // false
+        console.log(animalsMap.get('horse')); // 5
     </script>
 </body>
 </html>
